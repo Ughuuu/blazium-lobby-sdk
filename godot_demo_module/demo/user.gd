@@ -44,10 +44,12 @@ func peer_joined(lobby_peer: String):
 func peer_left(lobby_peer: String):
 	print("Callback: %s peer_left %s" % [get_index(), lobby_peer])
 	
-func lobby_view(host: String, sealed: bool, _lobby_peer_ids: Array[String], lobby_peer_names: Array[String], _lobby_peer_readys: Array[bool]):
+func lobby_view(host: String, sealed: bool, lobby_peer_ids: Array, lobby_peer_names: Array, _lobby_peer_readys: Array):
 	var print_result = "Callback: %s lobby_view: host %s sealed %s peers: " % [get_index(), host, sealed]
 	for peer in lobby_peer_names:
-		print_result += " " % [peer]
+		print_result += peer + " "
+	for peer in lobby_peer_ids:
+		print_result += peer + " "
 	print(print_result)
 
 func peer_ready(lobby_peer: String):
