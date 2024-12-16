@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://demo_auth/user_auth.gd" id="1_rjot1"]
 
-[sub_resource type="LobbyInfo" id="LobbyInfo_guacl"]
+[sub_resource type="LobbyInfo" id="LobbyInfo_wimnx"]
 
-[sub_resource type="LobbyPeer" id="LobbyPeer_3leto"]
+[sub_resource type="LobbyPeer" id="LobbyPeer_tw0dk"]
 
 [node name="User" type="HBoxContainer"]
 size_flags_horizontal = 3
@@ -36,7 +36,7 @@ layout_mode = 2
 [node name="CommandToggle" type="OptionButton" parent="."]
 layout_mode = 2
 selected = 0
-item_count = 16
+item_count = 17
 popup/item_0/text = "connect_to_lobby"
 popup/item_0/id = 18
 popup/item_1/text = "disconnect_from_lobby"
@@ -69,6 +69,8 @@ popup/item_14/text = "add_lobby_tags"
 popup/item_14/id = 27
 popup/item_15/text = "del_lobby_tag"
 popup/item_15/id = 28
+popup/item_16/text = "lobby_call"
+popup/item_16/id = 16
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 2
@@ -83,8 +85,8 @@ editable = false
 
 [node name="LobbyClient" type="AuthoritativeClient" parent="."]
 game_id = "blazium_demo_id"
-lobby = SubResource("LobbyInfo_guacl")
-peer = SubResource("LobbyPeer_3leto")
+lobby = SubResource("LobbyInfo_wimnx")
+peer = SubResource("LobbyPeer_tw0dk")
 
 [connection signal="item_selected" from="CommandToggle" to="." method="_on_command_toggle_item_selected"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
